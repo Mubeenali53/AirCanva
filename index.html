@@ -17,6 +17,9 @@
                    height: auto;
                }
            }
+           #webcamVideo, #webcamCanvas {
+               display: none; /* Hide webcam feed and canvas */
+           }
        </style>
    </head>
    <body class="bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center min-h-screen p-4">
@@ -31,8 +34,11 @@
                </div>
            </div>
        </div>
+       <!-- Webcam elements -->
+       <video id="webcamVideo" autoplay playsinline></video>
+       <canvas id="webcamCanvas"></canvas>
        <script>
-           window.BACKEND_URL = 'https://aircanva-backend.onrender.com'; // Replace with your Render URL after deployment
+           window.BACKEND_URL = 'https://your-backend.onrender.com'; // Update after Render deployment
        </script>
        <script src="app.js"></script>
    </body>
