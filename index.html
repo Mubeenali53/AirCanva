@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Virtual Painting Canvas</title>
+       <script src="https://cdn.tailwindcss.com"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.min.js"></script>
+       <style>
+           #canvasDialog {
+               width: 636px;
+               height: 471px;
+           }
+           @media (max-width: 640px) {
+               #canvasDialog {
+                   width: 100%;
+                   height: auto;
+               }
+           }
+       </style>
+   </head>
+   <body class="bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center min-h-screen p-4">
+       <div class="max-w-2xl w-full">
+           <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all hover:scale-105">
+               <div id="canvasDialog">
+                   <img id="canvasImage" src="" alt="Painting Canvas" class="w-full h-full object-cover">
+               </div>
+               <div class="p-4 flex justify-between items-center">
+                   <button id="saveButton" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Save Canvas</button>
+                   <p id="statusMessage" class="text-gray-600 italic"></p>
+               </div>
+           </div>
+       </div>
+       <script>
+           window.BACKEND_URL = 'https://your-backend.onrender.com'; // Replace with your Render URL after deployment
+       </script>
+       <script src="app.js"></script>
+   </body>
+   </html>
